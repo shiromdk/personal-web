@@ -1,0 +1,115 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Open+Sans);h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1.12rem;
+}
+h5 {
+  font-size: .83rem;
+}
+h6 {
+  font-size: .75rem;
+}
+.header {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+.subHeader {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.container {
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+}
+nav {
+  margin: 50px auto;
+  max-width: 100%;
+  width: 100%;
+}
+.nav-menu {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+.nav-menu li a {
+  text-decoration: none;
+  align-self: center;
+  font-size: 16px;
+  color: #000000;
+  padding: 16px 20px;
+  transition: background .2s linear;
+}
+#nav-checkbox,
+.nav-toggle {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .nav-menu li a {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .nav-toggle {
+    clear: both;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    transition: all .1s linear;
+  }
+  .nav-toggle:hover {
+    background: #cecece;
+  }
+  #nav-checkbox:checked + label .first li {
+    opacity: 1;
+    visibility: visible;
+    transition: all .7s linear;
+  }
+  #nav-checkbox:checked + label .first {
+    height: 200px;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 0px;
+    transition: height .3s linear;
+  }
+  .nav-menu li {
+    display: flex;
+    /* magic */
+    align-self: center;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .nav-menu li a {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+  }
+}

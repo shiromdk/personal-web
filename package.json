@@ -18,6 +18,8 @@
     "mongoose": "^4.11.10",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",

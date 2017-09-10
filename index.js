@@ -1,14 +1,14 @@
 //IMPORTS
 const bodyParser = require('body-parser');
 const express = require('express');
+const mongoose = require('mongoose');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 require('dotenv').config()
 
-
-
-
-
+mongoose.connect(process.env.MONGO_URI).catch(err=>{
+  console.log(err);
+});
 
 //EXPRESS SETUP
 const app = express();
@@ -30,8 +30,10 @@ passport.use(
   clientID:process.env.GOOGLE_CLIENT_ID,
   clientSecret:process.env.GOOGLE_CLIENT_SECRET,
   callbackURL:'/auth/google/callback'
-},(accessToken)=>{
+},(accessToken,refreshToken,profile)=>{
   console.log(accessToken);
+  console.log(refreshToken);
+  console.log(profile);
 })
 );
 

@@ -4,13 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractStyle = new ExtractTextPlugin({
-  filename: 'style.css',
-  disable: process.env.NODE_ENV === 'development'
+  filename: 'style.css'
+});
+const extractAdminStyle = new ExtractTextPlugin({
+  filename:'admin_style.css'
 });
 
 module.exports = {
   entry: {
-    bundle: './client/src/index.js'
+    bundle: './client/src/index.js',
   },
   output: {
     path: path.join(__dirname, 'client/dist/js'),
@@ -32,6 +34,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
+        exclude:/\.admin.less$/,
         use: extractStyle.extract({
           use: [
             {

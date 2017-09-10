@@ -6,6 +6,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const pug = require('pug');
 require('dotenv').config()
+require('./server/models/User');
 require('./server/services/passport');
 
 mongoose.connect(process.env.MONGO_URI).catch(err=>{

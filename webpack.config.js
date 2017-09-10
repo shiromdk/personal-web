@@ -51,7 +51,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'server/public/index.html'
     }),
-    extractStyle
-    //new webpack.optimize.UglifyJsPlugin()
+    extractStyle,
+    new webpack.optimize.UglifyJsPlugin()
   ]
 };

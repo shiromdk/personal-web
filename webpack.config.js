@@ -54,7 +54,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'server/public/index.html'
     }),
+    new webpack.DefinePlugin({
+    'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    },
+    }),
     extractStyle,
     new webpack.optimize.UglifyJsPlugin()
+
   ]
 };

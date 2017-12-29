@@ -113,3 +113,17 @@ nav {
     align-content: center;
   }
 }
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  filter: grayscale(100%);
+}
+.logo:hover {
+  width: 85px;
+  height: 85px;
+}

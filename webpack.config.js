@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
 const extractStyle = new ExtractTextPlugin({
   filename: 'style.css'
 });
@@ -47,7 +48,19 @@ module.exports = {
           // use style-loader in development
           fallback: 'style-loader'
         })
-      }
+      },
+        {
+            test: /\.(gif|png|jpe?g|svg)$/i,
+            use: [
+                'file-loader',
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        bypassOnDebug: true,
+                    },
+                },
+            ],
+        }
     ]
   },
   plugins: [
